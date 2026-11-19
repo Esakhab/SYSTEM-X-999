@@ -1,1 +1,51 @@
 
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GHOST SYSTEM</title>
+<style>
+body{background:#000;color:#00ff41;font-family:monospace;text-align:center;padding:20px}
+h1{font-size:30px;text-shadow:0 0 15px #0f0}
+#logs{text-align:left;border:1px solid #0f0;padding:15px;height:240px;overflow:auto;margin-top:25px}
+#bar{height:15px;border:1px solid #0f0;margin-top:20px}
+#fill{height:100%;width:0;background:#0f0}
+#end{display:none;color:white;font-size:24px;margin-top:35px}
+</style>
+</head>
+<body>
+<h1>GHOST SYSTEM</h1>
+<p>SECURE CONNECTION INITIALIZED</p>
+<div id="logs"></div>
+<div id="bar"><div id="fill"></div></div>
+<div id="end">
+😂 YOU HAVE BEEN PRANKED!<br><br>
+YOUR PHONE IS SAFE ❤️
+</div>
+<script>
+let lines=[
+"Connecting to demo server...",
+"Scanning fictional network...",
+"Analyzing security...",
+"Decrypting demo data...",
+"Running simulation...",
+"Process complete!"
+];
+let i=0;
+function start(){
+if(i<lines.length){
+let p=document.createElement("p");
+p.textContent="[+] "+lines[i];
+document.getElementById("logs").appendChild(p);
+document.getElementById("fill").style.width=((i+1)/lines.length*100)+"%";
+i++;
+setTimeout(start,1500);
+}else{
+document.getElementById("end").style.display="block";
+}
+}
+start();
+</script>
+</body>
+</html>
